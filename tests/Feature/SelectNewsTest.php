@@ -25,7 +25,7 @@ class SelectNews extends TestCase
 
         $news=News::findOrFail($faker->randomElement(News::all())->id);
 
-        $response = $this->actingAs($user)->get('/show/'.$news->id, $news->toArray());
+        $response = $this->actingAs($user)->get(route('news.select.one',['id' => $news->id]), $news->toArray());
 
         $response->assertStatus(200);
     }

@@ -25,7 +25,7 @@ class UpdateNews extends TestCase
         $news = factory(News::class)->make();
         $news_id=News::findOrFail($faker->randomElement(News::all())->id)->id;
 
-        $response = $this->actingAs($user)->patch("/update/".$news_id, $news->toArray());
+        $response = $this->actingAs($user)->patch(route('news.update.one', ['id' => $news_id]), $news->toArray());
 
         $response->assertStatus(200);
     }

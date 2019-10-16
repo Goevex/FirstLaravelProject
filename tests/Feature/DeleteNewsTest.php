@@ -23,7 +23,7 @@ class DeleteNews extends TestCase
 
         $user = User::findOrFail($faker->randomElement(User::all())->id);
         
-        $response = $this->actingAs($user)->delete("/remove/".$faker->randomElement(News::all())->id,[]);
+        $response = $this->actingAs($user)->delete(route('news.delete.one', ['id' => $faker->randomElement(News::all())->id]),[]);
 
         $response->assertStatus(200);
     }

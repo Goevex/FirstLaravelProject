@@ -24,7 +24,7 @@ class InsertNews extends TestCase
         
         $news = factory(News::class)->make();
 
-        $response = $this->actingAs($user)->put("/insert", $news->toArray());
+        $response = $this->actingAs($user)->put(route('news.insert.one'), $news->toArray());
 
         $response->assertStatus(200);
     }

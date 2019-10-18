@@ -2,15 +2,14 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\News;
 use App\User;
-use Faker\Factory as FakerFactory;
 
 class SelectNews extends TestCase
 {
+    use WithFaker;
 
     /**
      * Tests show endpoint
@@ -19,7 +18,7 @@ class SelectNews extends TestCase
      */
     public function testSelect()
     {
-        $faker = FakerFactory::create();
+        $faker = $this->faker();
      
         $user = User::findOrFail($faker->randomElement(User::all())->id);
 

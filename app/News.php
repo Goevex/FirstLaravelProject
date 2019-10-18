@@ -9,7 +9,8 @@ class News extends Model
     /**
      * Get user that owns the news
      */
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo('App\User', 'user_id');
     }
 }

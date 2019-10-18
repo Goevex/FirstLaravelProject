@@ -8,8 +8,8 @@ use App\User;
 
 $factory->define(News::class, function (Faker $faker) {
     return [
-        'title'=>$faker->sentence(5),
-        'content'=>$faker->text($maxNbChars = 200),
-        'user_id'=>$faker->randomElement(User::all()),
+        'title' => $faker->sentence(5),
+        'content' => $faker->text($maxNbChars = 200),
+        'user_id' => $faker->randomElement(User::all()),
     ];
 });

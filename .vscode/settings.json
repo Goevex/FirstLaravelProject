@@ -1,0 +1,13 @@
+{
+    "sqltools.connections": [
+        {
+            "askForPassword": false,
+            "database": "laraveltest",
+            "dialect": "MySQL",
+            "name": "Lokal laraveltest",
+            "port": 3306,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
+}

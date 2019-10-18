@@ -2,15 +2,15 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\News;
 use App\User;
-use Faker\Factory as FakerFactory;
 
 class InsertNews extends TestCase
 {
+    use WithFaker;
+
     /**
      * Tests insert endpoint
      *
@@ -18,10 +18,10 @@ class InsertNews extends TestCase
      */
     public function testInsert()
     {
-        $faker = FakerFactory::create();
+        $faker = $this->faker();
 
         $user = User::findOrFail($faker->randomElement(User::all())->id);
-        
+
         $news = factory(News::class)->make();
 
         $response = $this->actingAs($user)->put(route('news.insert.one'), $news->toArray());

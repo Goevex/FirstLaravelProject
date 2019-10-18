@@ -3,8 +3,6 @@
 namespace App\Handlers;
 
 use App\Events\NewsCreatedEvent;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
 class NewsCreatedHandler
 {
